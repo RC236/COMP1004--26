@@ -87,7 +87,7 @@ Time = MinutesInput * 60
 let TotalTime = Time;
 let BreakCheck = [];
 
-for (let i = 1; i <= BreakCheck; i++) {
+for (let i = 1; i <= BreaksInput; i++) {
 	let BreakTime = Math.floor(TotalTime - (TotalTime / (BreaksInput + 1)) *i );
 	BreakCheck.push(BreakTime);
 }
@@ -104,15 +104,67 @@ UpdateTime();
 	
 	}
 	
-		if BreakCheck.includes(Time)) {
+		if (BreakCheck.includes(Time)) {
 			alert ("Time for a break!");
 		}
 	
 		Time --;
 		UpdateTime();
 	}, 1000);
-	
 }
+
+/* button functionality  */
+
+function StopTimer () {
+clearInterval(TimeRunning);
+TimeRunning = null
+}
+
+function ResetTimer () {
+clearInterval(TimeRunning);
+TimeRunning = null
+	
+let MinutesInput = document.getElementById("minutes").value;
+Time = MinutesInput * 60;
+UpdateTime();
+}
+
+
+function DownloadData() {
+let TimerStats = {
+"SessionMinutes":
+  document.getElementById("minutes").value,
+"Breaks":
+	document.getElementById("breaks").value,
+	
+	"Total Time": Time /60 + "minutes"
+   
+
+ };
+
+const blob = new Blob([JSON.stringify(TimerStats, null, 2)],
+{type: 'application/json'}
+
+);
+
+const link = document.createElement('a');
+link.href = URL.createObjectURL(blob);
+link.download = "TimerStats.json";
+link.click()
+}
+
+/* Show starting time */
+
+UpdateTime();
+
+
+</script>
+
+</body>
+</html>
+
+
+
 	
 		
 		
