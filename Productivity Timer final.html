@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="Timer CSS.css">
+<title> Productivity Timer <title/>
+
+<body>
+<div class="userbox">
+
+<!--Timer shell -->
+	<div class="TimerShell">
+		<div id="Display">00:00</div>
+
+<!--Buttons-->
+		<div class="buttons">
+			<button onclick="StartTimer"()>
+				Start
+				</button>
+
+			<button onclick="StopTimer"()>
+				Stop
+				</button>
+
+			<button onclick="ResetTimer"()>
+				Reset
+				</button>
+		</div>
+
+		<button
+		class="DownloadButton"
+		onclick="DownloadData()">
+		Download Data
+		<button/>
+	<div/>
+
+
+	<!--UserField-->
+	<div class="userfield">
+	<p> How many minutes: </p>
+	<input
+		type="number"
+		id="minutes"
+		value="0" >
+	
+	<p> How many breaks: </p>
+	<input
+		type="number"
+		id="breaks"
+		value="0" >
+	</div>
+</div>
+
+
+<script>
+/*Global var space*/
+
+let Time = 0
+let TimeRunning;
+let TimerDisplay = document.getElementById("Display")
+
+/*Converting seconds to mins*/
+function UpdateTime () {
+	let minutes = Math.floor(Time / 60);
+	let Seconds = Time % 60;
+	if (Seconds < 10) { 	/*displays a number less than 10 as 08 or 09*/
+		Seconds = "0" + Seconds;
+	}
+	
+	TimerDisplay.innerHTML = minutes + ":" + Seconds;
+{
+
+/* Main timer loop*/
+
+function StartTimer (){
+	
+	if (TimeRunning) {
+	
+	return;
+	}
+	
+/*Reads input from time and break fields*/
+
+let MinutesInput = document.getElementById("minutes").value
+let BreaksInput = document.getElementById("breaks").value
+
+Time = MinutesInput * 60
+
+/*Converts minutes to seconds then creates empty list for break checks */
+let TotalTime = Time;
+let BreakCheck = [];
+
+for (let i = 1; i = <= BreakCheck; i++) {
+	let BreakTime = Math.floor(TotalTime - (TotalTime / (BreaksInput + 1)) *i );
+	BreakCheck.push(BreakTime);
+}
+
+UpdateTime();
+
+/*Main timer countdown function - checks for return condition and updates display */
+
+	TimeRunning = setInterval(function() {
+		if Time <=0 {
+			clearInterval(TimeRunning);
+			TimeRunning = null;
+		return;
+	
+	}
+	
+		if BreakCheck.includes(time)) {
+			alert ("Time for a break!");
+		}
+	
+		time --;
+		UpdateTime();
+	}, 1000);
+	
+		
+		
+
+	
+	
+	
+	
