@@ -22,7 +22,35 @@ align-items: center;
 font-size 70px;
 	
 }
+/*Set time and breaks box*/
+.userbox {
+	position: fixed;
+	top: 20px;
+	left: 10px;
+	display: flex;
+	gap: 20px;
+}
+
+/*Buttons*/
+.buttons {
+display: flex;
+justify-content: space-between;
+margin-bottom: 10px;
+}
+
+/*Download button spacing*/
+.DLButton {
+	width: 100%;
+}
+
+/*Set time and break box text field*/
+.userfield {
+	width: 100%;
+	padding: 8px;
+	margin-bottom 15px;
+	box-sizing: border-box;
 	
+}	
 
 
 
