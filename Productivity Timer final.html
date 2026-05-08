@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="Timer CSS.css">
-<title> Productivity Timer <title/>
+<title> Productivity Timer </title>
 
 <body>
 <div class="userbox">
@@ -11,15 +11,15 @@
 
 <!--Buttons-->
 		<div class="buttons">
-			<button onclick="StartTimer"()>
+			<button onclick="StartTimer()">
 				Start
 				</button>
 
-			<button onclick="StopTimer"()>
+			<button onclick="StopTimer()">
 				Stop
 				</button>
 
-			<button onclick="ResetTimer"()>
+			<button onclick="ResetTimer()">
 				Reset
 				</button>
 		</div>
@@ -28,8 +28,8 @@
 		class="DownloadButton"
 		onclick="DownloadData()">
 		Download Data
-		<button/>
-	<div/>
+		</button>
+	</div>
 
 
 	<!--UserField-->
@@ -65,7 +65,7 @@ function UpdateTime () {
 	}
 	
 	TimerDisplay.innerHTML = minutes + ":" + Seconds;
-{
+}
 
 /* Main timer loop*/
 
@@ -87,7 +87,7 @@ Time = MinutesInput * 60
 let TotalTime = Time;
 let BreakCheck = [];
 
-for (let i = 1; i = <= BreakCheck; i++) {
+for (let i = 1; i <= BreakCheck; i++) {
 	let BreakTime = Math.floor(TotalTime - (TotalTime / (BreaksInput + 1)) *i );
 	BreakCheck.push(BreakTime);
 }
@@ -97,20 +97,22 @@ UpdateTime();
 /*Main timer countdown function - checks for return condition and updates display */
 
 	TimeRunning = setInterval(function() {
-		if Time <=0 {
+		if (Time <=0) {
 			clearInterval(TimeRunning);
 			TimeRunning = null;
 		return;
 	
 	}
 	
-		if BreakCheck.includes(time)) {
+		if BreakCheck.includes(Time)) {
 			alert ("Time for a break!");
 		}
 	
-		time --;
+		Time --;
 		UpdateTime();
 	}, 1000);
+	
+}
 	
 		
 		
